@@ -1,0 +1,67 @@
+<div class="">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h2>Next Rental  </h2>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                  <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                  </div>
+              </div>
+                  <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">Email is required</div>
+                          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                          <div *ngIf="f.name.errors.required">Name is required</div>
+                         
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Rental Reference </label>
+                    <input type="text" formControlName="rentalreference" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rentalreference.errors }" />
+                    <div *ngIf="submitted && f.rentalreference.errors" class="invalid-feedback">
+                        <div *ngIf="f.rentalreference.errors.required">Rental Reference is required</div>
+                       
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label>Rental Start  Name </label>
+                  <input type="text" formControlName="rentalstartagency" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rentalstartagency.errors }" />
+                  <div *ngIf="submitted && f.rentalstartagency.errors" class="invalid-feedback">
+                      <div *ngIf="f.rentalstartagency.errors.required">Rental Agency Start  is required</div>
+                     
+                  </div>
+              </div>        
+            <div class="form-group">
+              <label>Rental start Date </label>           
+              <angular2-date-picker formControlName="rentalstartdate" class="form-control" [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
+              <div *ngIf="submitted && f.rentalstartdate.errors" class="invalid-feedback">
+                <div *ngIf="f.rentalstartdate.errors.required">Start Date is required</div>      
+              </div>
+          </div>
+          <div class="form-group">
+            <label>Rental Return Date </label>           
+            <angular2-date-picker formControlName="rentalreturndate" class="form-control"[(ngModel)]="date" [settings]="settings"></angular2-date-picker>
+            <div *ngIf="submitted && f.rentalreturndate.errors" class="invalid-feedback">
+              <div *ngIf="f.rentalreturndate.errors.required">Return Date is required</div>      
+            </div>
+        </div>
+                  <div class="form-group">
+                      <button [disabled]="loading" class="btn btn-primary">Send</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

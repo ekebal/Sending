@@ -1,0 +1,57 @@
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Trips is Done  </h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>                          
+                        </div>
+                    </div>               
+                  <div class="form-group">
+                    <label>Rental  Agency Start  Name </label>
+                    <input type="text" formControlName="rentalagencystartname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rentalagencystartname.errors }" />
+                    <div *ngIf="submitted && f.rentalagencystartname.errors" class="invalid-feedback">
+                        <div *ngIf="f.rentalagencystartname.errors.required">Rental  Agency Return  Name is required</div>                      
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label>>Rental  Agency Return  Name </label>
+                  <input type="text" formControlName="rentalagencyreturnname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rentalagencyreturnname.errors }" />
+                  <div *ngIf="submitted && f.rentalagencyreturnname.errors" class="invalid-feedback">
+                      <div *ngIf="f.rentalagencyreturnname.errors.required">Rental  Agency Return  Name  is required</div>                    
+                  </div>
+              </div>       
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>

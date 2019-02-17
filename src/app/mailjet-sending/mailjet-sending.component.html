@@ -1,0 +1,58 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Manual Send {{ title }}!
+  </h1>
+</div>
+
+
+<ul>
+  <li>
+    <button type="button" class="btn btn-pink" (click)="ValidationIsOn=!ValidationIsOn" >Send Validation Compte Mail  </button>
+    <app-validation-compte *ngIf="ValidationIsOn"></app-validation-compte>
+  </li>
+  <li>
+    <h2><button type="button" class="btn btn-pink" (click) ="ReminderCreateAccountIsOn= !ReminderCreateAccountIsOn" >Reminder Create Account </button></h2>
+    <app-reminder-create-account *ngIf="ReminderCreateAccountIsOn"></app-reminder-create-account>
+  </li>
+  <li>
+    <h2><button type="button" class="btn btn-pink"(click)="ReminderCompletedAccountIsOn=!ReminderCompletedAccountIsOn"  >Reminder Completed Account </button></h2>
+    <app-reminder-completed-account *ngIf="ReminderCompletedAccountIsOn"></app-reminder-completed-account>
+  </li>
+  <li>
+    <h2><button type="button" class="btn btn-pink"(click)="NextRentalsOn=!NextRentalsOn"  >Next Rental Send mail Event</button></h2>
+    <app-next-rental *ngIf="NextRentalsOn"></app-next-rental>
+  </li>
+  <li>
+    <h2><button type="button" class="btn btn-pink" (click)="ResetPasswordIsOn=!ResetPasswordIsOn" >Reset Password </button></h2>
+    <app-reset-password *ngIf="ResetPasswordIsOn"></app-reset-password>
+  </li>
+  <li>
+    <h2><button type="button" class="btn btn-pink"(click)="ValidationManuelleIsOn=!ValidationManuelleIsOn"  >Validation Manuelle  </button></h2>
+    <app-validation-manuel *ngIf="ValidationManuelleIsOn"></app-validation-manuel>
+  </li>
+  <li>
+    <h2><button type="button" class="btn btn-pink" (click)="DriverLicenceIsOn=!DriverLicenceIsOn" >Driver licence Not Accepted</button></h2>
+    <app-driver-licence-not-accepted *ngIf="DriverLicenceIsOn"></app-driver-licence-not-accepted>
+  </li>
+ 
+  <li>
+    <h2><button type="button" class="btn btn-pink"(click)="IDNotAccepted=!IDNotAccepted"  >ID Not Accepted </button></h2>
+    <app-idnot-accepted *ngIf="IDNotAccepted"></app-idnot-accepted>
+  </li>
+  <li>
+    <h2><button type="button" class="btn btn-pink"(click)="WelcomeToKirrkIsOn=!WelcomeToKirrkIsOn"  >Welcome to Kirrk  </button></h2>
+    <app-welcome-to-kirrk *ngIf="WelcomeToKirrkIsOn"></app-welcome-to-kirrk>
+  </li>
+  <li>
+
+   <h2><button type="button" class="btn btn-pink"(click)="TripsIsDoneIsOn=!TripsIsDoneIsOn"  > Trips is Done  </button></h2>
+   <app-trips-is-done *ngIf="TripsIsDoneIsOn"></app-trips-is-done>
+  </li>
+  <li>
+   
+    <h2><button type="button" class="btn btn-pink"(click)="ValidationIsOn=!ValidationIsOn"  >Send SMS   </button></h2>  
+  </li>
+
+</ul>
+
