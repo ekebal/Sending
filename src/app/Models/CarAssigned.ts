@@ -6,5 +6,7 @@ export class CarAssigned
     CarPlatform :string;
     Email :string;
     Name :string;
+    Bcc :string;
+
 
 }

@@ -4,4 +4,6 @@ export class IDNotAccepted
     Name :string;
     LastName :string;
     FirstName :string;
+    Bcc :string;
+
 }

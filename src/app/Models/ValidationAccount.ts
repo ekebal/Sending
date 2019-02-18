@@ -4,5 +4,7 @@
     UserLastName: string;
     email: string;
     Name: string;
+    Bcc :string;
+
 
 }

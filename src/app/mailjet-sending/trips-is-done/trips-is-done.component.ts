@@ -38,7 +38,9 @@ export class TripsIsDoneComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       lastName: ['', [Validators.required]],
       rentalagencystartname: ['', [Validators.required]],
-      rentalagencyreturnname: ['', [Validators.required]],     
+      rentalagencyreturnname: ['', [Validators.required]], 
+      Bcc: ['', Validators.required],
+
   });
 //this.validationCompt.firstName = this.registerForm.value;
       console.log(this.registerForm);
@@ -59,6 +61,8 @@ export class TripsIsDoneComponent implements OnInit {
       this.tripIsDone.Name = this.registerForm.value.firstName;
       this.tripIsDone.AgencyStartName = this.registerForm.value.rentalagencystartname;
       this.tripIsDone.AgencyReturnName = this.registerForm.value.rentalagencyreturnname;
+      this.tripIsDone.Bcc = this.registerForm.value.Bcc;
+
 
       console.log(this.tripIsDone);
       // stop here if form is invalid

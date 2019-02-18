@@ -6,4 +6,6 @@ export class TripIsDone
     FirstName:string;
     AgencyStartName:string;
     AgencyReturnName:string;
+    Bcc :string;
+
 }       

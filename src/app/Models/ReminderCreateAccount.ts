@@ -9,5 +9,7 @@ export class ReminderCreateAccount
     CreationCode :string;
     Start:string;
     Return :string;
+    Bcc :string;
+
 
 }

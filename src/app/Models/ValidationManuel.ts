@@ -9,4 +9,6 @@ export class ValidationManuel
     ImgFront :string;
     ImgBack :string;
     ImgSelfie :string;
+    Bcc :string;
+
 }

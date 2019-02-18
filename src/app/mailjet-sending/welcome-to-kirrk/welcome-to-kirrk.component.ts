@@ -35,6 +35,8 @@ export class WelcomeToKirrkComponent implements OnInit {
       firstName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       name: ['', [Validators.required]],
+      Bcc: ['', Validators.required],
+
   
 
   });
@@ -54,6 +56,8 @@ export class WelcomeToKirrkComponent implements OnInit {
       this.welcomToKirrk.Email = this.registerForm.value.email;
       this.welcomToKirrk.UserFirstName = this.registerForm.value.firstName;
       this.welcomToKirrk.Name = this.registerForm.value.name;
+      this.welcomToKirrk.Bcc = this.registerForm.value.Bcc;
+
        
       console.log(this.welcomToKirrk);
       // stop here if form is invalid

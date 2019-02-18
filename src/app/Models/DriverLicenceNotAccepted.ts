@@ -4,5 +4,6 @@ export class DriverLicenceNotAccepted
     Name :string;
     LastName :string;
     FirstName :string;
+    Bcc :string;
 
 }

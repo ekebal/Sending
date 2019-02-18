@@ -39,6 +39,8 @@ export class FirstRentalComponent implements OnInit {
       rentalcode: ['', [Validators.required]],
       rentalstartdate: ['', [Validators.required]],
       rentalreturndate: ['', [Validators.required]],
+      Bcc: ['', Validators.required],
+
 
 
       
@@ -60,6 +62,8 @@ console.log(this.registerForm);
       this.firstRental.Email = this.registerForm.value.email;
       this.firstRental.Name = this.registerForm.value.name;
       this.firstRental.RentalReference = this.registerForm.value.rentalreference;
+      this.firstRental.Bcc = this.registerForm.value.Bcc;
+
       this.firstRental.RentalAgencyName = this.registerForm.value.rentalagencyname;
       this.firstRental.RentalStartDate = datePipe.transform(this.registerForm.value.rentalstartdate,'dd/MM/yyyy à HH:mm');
       this.firstRental.RentalEndDate = datePipe.transform(this.registerForm.value.rentalreturndate,'dd/MM/yyyy à HH:mm');

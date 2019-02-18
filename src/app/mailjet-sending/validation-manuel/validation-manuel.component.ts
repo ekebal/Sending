@@ -40,7 +40,9 @@ export class ValidationManuelComponent implements OnInit {
       imgstate: ['', [Validators.required]],
       imgfront: ['', [Validators.required]],     
       imgback: ['', [Validators.required]],     
-      imgselfie: ['', [Validators.required]],   
+      imgselfie: ['', [Validators.required]], 
+      Bcc: ['', Validators.required],
+
 
 
   });
@@ -66,6 +68,8 @@ export class ValidationManuelComponent implements OnInit {
       this.validationManuel.ImgSelfie = this.registerForm.value.imgselfie;
       this.validationManuel.ImgState = this.registerForm.value.imgstate;
       this.validationManuel.MailUser = this.registerForm.value.mailuser;
+      this.validationManuel.Bcc = this.registerForm.value.Bcc;
+
 
        
       console.log(this.validationManuel);

@@ -27,6 +27,8 @@ export class ResetPasswordComponent implements OnInit {
       firstName: ['', Validators.required],
       userPasswordResetLink: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      Bcc: ['', Validators.required],
+
   });
 //this.resetPassword.firstName = this.registerForm.value;
 console.log(this.registerForm);
@@ -44,6 +46,8 @@ console.log(this.registerForm);
       this.resetPassword.UserPasswordResetLink = this.registerForm.value.userPasswordResetLink;
       this.resetPassword.Email = this.registerForm.value.email;
       this.resetPassword.Name = this.registerForm.value.firstName;
+      this.resetPassword.Bcc = this.registerForm.value.Bcc;
+
       console.log(this.resetPassword);
       // stop here if form is invalid
       this.service.ResetPassword(this.resetPassword).subscribe((res)=>{

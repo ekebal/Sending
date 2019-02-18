@@ -6,5 +6,7 @@ export class NextRental
     RentalStartAgency :string;
     RentalStartDate :string;
     RentalStartTime:string;
+    Bcc :string;
+
 
 }

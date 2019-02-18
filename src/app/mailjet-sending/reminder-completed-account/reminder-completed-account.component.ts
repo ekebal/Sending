@@ -40,6 +40,8 @@ export class ReminderCompletedAccountComponent implements OnInit {
       startdate: ['', [Validators.required]],
       returndate: ['', [Validators.required]],
       creationcode: ['', [Validators.required]],
+      Bcc: ['', Validators.required],
+
 
 
       
@@ -61,6 +63,8 @@ console.log(this.registerForm);
       this.reminderCompletedAccount.LastName = this.registerForm.value.lastName;
       this.reminderCompletedAccount.Email = this.registerForm.value.email;
       this.reminderCompletedAccount.Name = this.registerForm.value.firstName;
+      this.reminderCompletedAccount.Bcc = this.registerForm.value.Bcc;
+
       this.reminderCompletedAccount.StartAgencyName = this.registerForm.value.startagencyname;
       this.reminderCompletedAccount.ReturnAgencyName = this.registerForm.value.returnagencyname;
       this.reminderCompletedAccount.Start = datePipe.transform(this.registerForm.value.startdate,'dd/MM/yyyy à HH:mm');

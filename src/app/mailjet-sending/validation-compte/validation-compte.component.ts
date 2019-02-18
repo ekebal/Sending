@@ -29,6 +29,8 @@ export class ValidationCompteComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      Bcc: ['', Validators.required],
+
   });
 //this.validationCompt.firstName = this.registerForm.value;
 console.log(this.registerForm);
@@ -46,6 +48,8 @@ console.log(this.registerForm);
       this.validationCompt.UserLastName = this.registerForm.value.lastName;
       this.validationCompt.email = this.registerForm.value.email;
       this.validationCompt.Name = this.registerForm.value.firstName;
+      this.validationCompt.Bcc = this.registerForm.value.Bcc;
+
       console.log(this.validationCompt);
       // stop here if form is invalid
       this.service.ValidationCompteSend(this.validationCompt).subscribe((res)=>{

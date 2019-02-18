@@ -39,7 +39,11 @@
                   <div *ngIf="submitted && f.rentalagencyreturnname.errors" class="invalid-feedback">
                       <div *ngIf="f.rentalagencyreturnname.errors.required">Rental  Agency Return  Name  is required</div>                    
                   </div>
-              </div>       
+              </div>    
+              <div class="form-group">
+                    <label>Bcc</label>
+                    <input type="text" formControlName="Bcc" class="form-control" />
+                </div>    
                     <div class="form-group">
                         <button [disabled]="loading" class="btn btn-primary">Send</button>
                     </div>

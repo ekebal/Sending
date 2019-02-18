@@ -38,6 +38,8 @@ export class NextRentalComponent implements OnInit {
       name: ['', [Validators.required]],
       rentalstartagency: ['', [Validators.required]],
       rentalstartdate: ['', [Validators.required]],
+      Bcc: ['', Validators.required],
+
   });
 //this.validationCompt.firstName = this.registerForm.value;
 console.log(this.registerForm);
@@ -55,6 +57,8 @@ console.log(this.registerForm);
       this.nextRental.Email = this.registerForm.value.email;
       this.nextRental.UserFirstName = this.registerForm.value.firstName;
       this.nextRental.Name = this.registerForm.value.name;
+      this.nextRental.Bcc = this.registerForm.value.Bcc;
+
       this.nextRental.RentalStartAgency = this.registerForm.value.rentalstartagency;
       this.nextRental.RentalStartDate = datePipe.transform(this.registerForm.value.rentalstartdate,'dd/MM/yyyy');
       this.nextRental.RentalStartTime = datePipe.transform(this.registerForm.value.rentalstartdate,'HH:mm');

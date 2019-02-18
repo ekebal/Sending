@@ -7,5 +7,6 @@ export class FirstRental
     RentalStartDate :string;
     RentalEndDate:string;
     RentalCode :string;
+    Bcc :string;
 
 }

@@ -6,7 +6,7 @@ export class ReminderCompletedAccount
     Name: string;
     StartAgencyName:string;
     ReturnAgencyName :string;
-
+    Bcc :string;
     Start:string;
     Return :string;
 

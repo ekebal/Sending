@@ -4,6 +4,8 @@ export class ResetPassword
     Name: string;
     UserFirstName:string;
     UserPasswordResetLink :string;
+    Bcc :string;
+
 }
 
 

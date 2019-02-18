@@ -61,6 +61,10 @@
                                                 <div *ngIf="f.imgselfie.errors.required">Image Selfie  is required</div>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                                <label>Bcc</label>
+                                                <input type="text" formControlName="Bcc" class="form-control"/>
+                                            </div> 
                         <div class="form-group">
                             <button [disabled]="loading" class="btn btn-primary">Send</button>
                         </div>

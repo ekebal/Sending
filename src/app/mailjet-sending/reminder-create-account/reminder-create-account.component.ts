@@ -40,6 +40,8 @@ export class ReminderCreateAccountComponent implements OnInit {
       startdate: ['', [Validators.required]],
       returndate: ['', [Validators.required]],
       creationcode: ['', [Validators.required]],
+      Bcc: ['', Validators.required],
+
 
 
       
@@ -66,6 +68,8 @@ console.log(this.registerForm);
       this.reminderCreateAccount.ReturnAgencyName = this.registerForm.value.returnagencyname;
       this.reminderCreateAccount.Start = datePipe.transform(this.registerForm.value.startdate,'dd/MM/yyyy à HH:mm');
       this.reminderCreateAccount.Return = datePipe.transform(this.registerForm.value.returndate,'dd/MM/yyyy à HH:mm');
+      this.reminderCreateAccount.Bcc = this.registerForm.value.Bcc;
+
       console.log(this.reminderCreateAccount);
       // stop here if form is invalid
       this.service.ReminderCreateAccount(this.reminderCreateAccount).subscribe((res)=>{
