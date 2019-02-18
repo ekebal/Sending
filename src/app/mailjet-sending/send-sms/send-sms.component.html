@@ -1,3 +1,30 @@
-<p>
-  send-sms works!
-</p>
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2> Driver licence not Accepted   </h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>SMSType  </label>
+                        <select 
+                        formControlName="type"(change)="parseValue($event.target.value)">                           
+                            <option *ngFor="let name of options"
+                                [value]="name">{{name}}</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        <label>To</label>
+                        <input type="text" formControlName="number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.number?.errors }" />
+                        <div *ngIf="submitted && f.number?.errors" class="invalid-feedback">
+                            <div *ngIf="f.number?.errors.required"> Number is required</div>
+                           
+                        </div>
+                    </div>               
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>

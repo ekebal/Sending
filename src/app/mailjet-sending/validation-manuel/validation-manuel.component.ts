@@ -34,13 +34,14 @@ export class ValidationManuelComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      name: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      mailuser: ['', [Validators.required]],     
       imgstate: ['', [Validators.required]],
-      imgback: ['', [Validators.required]],     
-      imgselfie: ['', [Validators.required]],     
       imgfront: ['', [Validators.required]],     
+      imgback: ['', [Validators.required]],     
+      imgselfie: ['', [Validators.required]],   
+
 
   });
 //this.validationCompt.firstName = this.registerForm.value;
@@ -59,11 +60,13 @@ export class ValidationManuelComponent implements OnInit {
       this.validationManuel.Email = this.registerForm.value.email;
       this.validationManuel.FirstName = this.registerForm.value.firstName;
       this.validationManuel.LastName = this.registerForm.value.lastName;
-      this.validationManuel.Name = this.registerForm.value.name;
+      this.validationManuel.Name = this.registerForm.value.firstName;
       this.validationManuel.ImgFront = this.registerForm.value.imgfront;
       this.validationManuel.ImgBack = this.registerForm.value.imgback;
       this.validationManuel.ImgSelfie = this.registerForm.value.imgselfie;
       this.validationManuel.ImgState = this.registerForm.value.imgstate;
+      this.validationManuel.MailUser = this.registerForm.value.mailuser;
+
        
       console.log(this.validationManuel);
       // stop here if form is invalid

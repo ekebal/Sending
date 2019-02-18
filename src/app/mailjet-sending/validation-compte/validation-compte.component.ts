@@ -29,7 +29,6 @@ export class ValidationCompteComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      name: ['', [Validators.required]]
   });
 //this.validationCompt.firstName = this.registerForm.value;
 console.log(this.registerForm);
@@ -43,16 +42,14 @@ console.log(this.registerForm);
   onSubmit() {
     console.log(this.registerForm);
       this.submitted = true;
-      this.validationCompt.firstName = this.registerForm.value.firstName;
-      this.validationCompt.lastName = this.registerForm.value.lastName;
+      this.validationCompt.UserFirstName = this.registerForm.value.firstName;
+      this.validationCompt.UserLastName = this.registerForm.value.lastName;
       this.validationCompt.email = this.registerForm.value.email;
-      this.validationCompt.Name = this.registerForm.value.name;
+      this.validationCompt.Name = this.registerForm.value.firstName;
       console.log(this.validationCompt);
       // stop here if form is invalid
       this.service.ValidationCompteSend(this.validationCompt).subscribe((res)=>{
         (result: Response) => {
-         
-          console.log(result.json())
        
       }});
       if (this.registerForm.invalid) {

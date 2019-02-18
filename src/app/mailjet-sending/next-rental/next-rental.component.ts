@@ -38,10 +38,6 @@ export class NextRentalComponent implements OnInit {
       name: ['', [Validators.required]],
       rentalstartagency: ['', [Validators.required]],
       rentalstartdate: ['', [Validators.required]],
-      rentalreturndate: ['', [Validators.required]],
-
-
-      
   });
 //this.validationCompt.firstName = this.registerForm.value;
 console.log(this.registerForm);
@@ -57,12 +53,11 @@ console.log(this.registerForm);
     var datePipe = new DatePipe('en-US');
       this.submitted = true;
       this.nextRental.Email = this.registerForm.value.email;
-      this.nextRental.FirstName = this.registerForm.value.firstName;
-
+      this.nextRental.UserFirstName = this.registerForm.value.firstName;
       this.nextRental.Name = this.registerForm.value.name;
       this.nextRental.RentalStartAgency = this.registerForm.value.rentalstartagency;
-      this.nextRental.RentalStartDate = datePipe.transform(this.registerForm.value.rentalstartdate,'dd/MM/yyyy à HH:mm');
-      this.nextRental.RentalEndDate = datePipe.transform(this.registerForm.value.rentalreturndate,'dd/MM/yyyy à HH:mm');
+      this.nextRental.RentalStartDate = datePipe.transform(this.registerForm.value.rentalstartdate,'dd/MM/yyyy');
+      this.nextRental.RentalStartTime = datePipe.transform(this.registerForm.value.rentalstartdate,'HH:mm');
       console.log(this.nextRental);
       // stop here if form is invalid
       this.service.NextRental(this.nextRental).subscribe((res)=>{

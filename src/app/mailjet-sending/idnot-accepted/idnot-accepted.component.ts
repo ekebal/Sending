@@ -27,7 +27,6 @@ export class IDNotAcceptedComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      name: ['', [Validators.required]]
   });
 //this.validationCompt.firstName = this.registerForm.value;
 console.log(this.registerForm);
@@ -44,7 +43,7 @@ console.log(this.registerForm);
       this.iDNotAccepted.FirstName = this.registerForm.value.firstName;
       this.iDNotAccepted.LastName = this.registerForm.value.lastName;
       this.iDNotAccepted.Email = this.registerForm.value.email;
-      this.iDNotAccepted.Name = this.registerForm.value.name;
+      this.iDNotAccepted.Name = this.registerForm.value.firstName;
       console.log(this.iDNotAccepted);
       // stop here if form is invalid
       this.service.IDNotAccepted(this.iDNotAccepted).subscribe((res)=>{

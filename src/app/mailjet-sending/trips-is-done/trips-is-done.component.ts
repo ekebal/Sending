@@ -36,7 +36,6 @@ export class TripsIsDoneComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      name: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       rentalagencystartname: ['', [Validators.required]],
       rentalagencyreturnname: ['', [Validators.required]],     
@@ -57,7 +56,7 @@ export class TripsIsDoneComponent implements OnInit {
       this.tripIsDone.Email = this.registerForm.value.email;
       this.tripIsDone.FirstName = this.registerForm.value.firstName;
       this.tripIsDone.LastName = this.registerForm.value.lastName;
-      this.tripIsDone.Name = this.registerForm.value.name;
+      this.tripIsDone.Name = this.registerForm.value.firstName;
       this.tripIsDone.AgencyStartName = this.registerForm.value.rentalagencystartname;
       this.tripIsDone.AgencyReturnName = this.registerForm.value.rentalagencyreturnname;
 

@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Manual Send {{ title }}!
+   Send Mail {{ title }}!
   </h1>
 </div>
 
@@ -51,7 +51,8 @@
   </li>
   <li>
    
-    <h2><button type="button" class="btn btn-pink"(click)="ValidationIsOn=!ValidationIsOn"  >Send SMS   </button></h2>  
+    <h2><button type="button" class="btn btn-pink"(click)="SendSMSIsOn=!SendSMSIsOn"  >Send SMS   </button></h2>  
+    <app-send-sms *ngIf="SendSMSIsOn"></app-send-sms>
   </li>
 
 </ul>

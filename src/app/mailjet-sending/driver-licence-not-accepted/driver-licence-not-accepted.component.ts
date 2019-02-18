@@ -28,7 +28,6 @@ export class DriverLicenceNotAcceptedComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      name: ['', [Validators.required]]
   });
 //this.validationCompt.firstName = this.registerForm.value;
 console.log(this.registerForm);
@@ -45,7 +44,7 @@ console.log(this.registerForm);
       this.driverLicenceNotAccepted.FirstName = this.registerForm.value.firstName;
       this.driverLicenceNotAccepted.LastName = this.registerForm.value.lastName;
       this.driverLicenceNotAccepted.Email = this.registerForm.value.email;
-      this.driverLicenceNotAccepted.Name = this.registerForm.value.name;
+      this.driverLicenceNotAccepted.Name = this.registerForm.value.firstName;
       console.log(this.driverLicenceNotAccepted);
       // stop here if form is invalid
       this.service.DriverLicenceNotAccepted(this.driverLicenceNotAccepted).subscribe((res)=>{

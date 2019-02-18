@@ -25,14 +25,7 @@
                             <div *ngIf="f.email.errors.required">Email is required</div>
                             <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
-                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                            <div *ngIf="f.name.errors.required">Name is required</div>                          
-                        </div>
-                    </div>               
+                    </div>              
                   <div class="form-group">
                     <label>Rental  Agency Start  Name </label>
                     <input type="text" formControlName="rentalagencystartname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rentalagencystartname.errors }" />
@@ -41,7 +34,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                  <label>>Rental  Agency Return  Name </label>
+                  <label>Rental  Agency Return  Name </label>
                   <input type="text" formControlName="rentalagencyreturnname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rentalagencyreturnname.errors }" />
                   <div *ngIf="submitted && f.rentalagencyreturnname.errors" class="invalid-feedback">
                       <div *ngIf="f.rentalagencyreturnname.errors.required">Rental  Agency Return  Name  is required</div>                    

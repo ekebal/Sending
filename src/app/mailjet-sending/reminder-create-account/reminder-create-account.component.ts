@@ -35,7 +35,6 @@ export class ReminderCreateAccountComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      name: ['', [Validators.required]],
       startagencyname: ['', [Validators.required]],
       returnagencyname: ['', [Validators.required]],
       startdate: ['', [Validators.required]],
@@ -61,7 +60,7 @@ console.log(this.registerForm);
       this.reminderCreateAccount.FirstName = this.registerForm.value.firstName;
       this.reminderCreateAccount.LastName = this.registerForm.value.lastName;
       this.reminderCreateAccount.Email = this.registerForm.value.email;
-      this.reminderCreateAccount.Name = this.registerForm.value.name;
+      this.reminderCreateAccount.Name = this.registerForm.value.firstName;
       this.reminderCreateAccount.CreationCode = this.registerForm.value.creationcode;
       this.reminderCreateAccount.StartAgencyName = this.registerForm.value.startagencyname;
       this.reminderCreateAccount.ReturnAgencyName = this.registerForm.value.returnagencyname;

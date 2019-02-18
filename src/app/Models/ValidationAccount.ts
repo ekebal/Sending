@@ -1,7 +1,7 @@
  export class ValidationAccount{
    
-    firstName: string;
-    lastName: string;
+    UserFirstName: string;
+    UserLastName: string;
     email: string;
     Name: string;
 

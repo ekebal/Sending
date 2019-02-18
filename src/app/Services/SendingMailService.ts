@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
 import { ValidationAccount } from '../Models/ValidationAccount';
 import { ReminderCreateAccount } from '../Models/ReminderCreateAccount';
@@ -13,6 +12,7 @@ import { ResetPassword } from '../Models/ResetPassword';
 import { TripIsDone } from '../Models/TripIsDone';
 import { ValidationManuel } from '../Models/ValidationManuel';
 import { WelcomToKirrk } from '../Models/WelcomToKirrk';
+import { SendSMS } from '../Models/SendSMS';
 
 @Injectable()
 export class SendingMailService {
@@ -96,5 +96,11 @@ export class SendingMailService {
         console.log(tripIsDone);
         console.log("ok");
         return this.httpClient.post(`${this.Url}/api/sending/tripIsDone/`,tripIsDone);
+    }
+    public SMSSend(sendSMS : SendSMS)
+    {
+        console.log(sendSMS);
+        console.log("ok");
+        return this.httpClient.post(`${this.Url}/api/sending/sendSMS/`,sendSMS);
     }
 }

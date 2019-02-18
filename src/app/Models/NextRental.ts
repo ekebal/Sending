@@ -1,10 +1,10 @@
 export class NextRental
 {
-    FirstName: string;
+    UserFirstName: string;
     Email: string;
     Name: string;
     RentalStartAgency :string;
     RentalStartDate :string;
-    RentalEndDate:string;
+    RentalStartTime:string;
 
 }
