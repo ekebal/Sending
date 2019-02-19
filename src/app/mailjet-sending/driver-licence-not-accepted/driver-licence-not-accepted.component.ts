@@ -28,11 +28,9 @@ export class DriverLicenceNotAcceptedComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      Bcc: ['', Validators.required],
+      Bcc: ['',Validators.email],
   });
 //this.validationCompt.firstName = this.registerForm.value;
-console.log(this.registerForm);
-console.log(this.registerForm);
 
   }
 
@@ -40,8 +38,13 @@ console.log(this.registerForm);
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
-      this.submitted = true;
+      
       this.driverLicenceNotAccepted.FirstName = this.registerForm.value.firstName;
       this.driverLicenceNotAccepted.LastName = this.registerForm.value.lastName;
       this.driverLicenceNotAccepted.Email = this.registerForm.value.email;
@@ -56,8 +59,7 @@ console.log(this.registerForm);
           console.log(result.json())
        
       }});
-      if (this.registerForm.invalid) {
-          return;
-      }
+   
   }
+}
 }

@@ -39,7 +39,7 @@ export class TripsIsDoneComponent implements OnInit {
       lastName: ['', [Validators.required]],
       rentalagencystartname: ['', [Validators.required]],
       rentalagencyreturnname: ['', [Validators.required]], 
-      Bcc: ['', Validators.required],
+      Bcc: ['',Validators.email],
 
   });
 //this.validationCompt.firstName = this.registerForm.value;
@@ -52,6 +52,11 @@ export class TripsIsDoneComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
     var datePipe = new DatePipe('en-US');
       this.submitted = true;
@@ -75,6 +80,6 @@ export class TripsIsDoneComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
-    
+    }   
   }
 }

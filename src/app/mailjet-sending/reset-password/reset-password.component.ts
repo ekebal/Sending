@@ -27,7 +27,7 @@ export class ResetPasswordComponent implements OnInit {
       firstName: ['', Validators.required],
       userPasswordResetLink: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      Bcc: ['', Validators.required],
+      Bcc: ['', Validators.email],
 
   });
 //this.resetPassword.firstName = this.registerForm.value;
@@ -40,6 +40,11 @@ console.log(this.registerForm);
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
       this.submitted = true;
       this.resetPassword.UserFirstName = this.registerForm.value.firstName;
@@ -60,4 +65,5 @@ console.log(this.registerForm);
           return;
       }
   }
+}
 }

@@ -16,7 +16,7 @@ import { SendSMS } from '../Models/SendSMS';
 
 @Injectable()
 export class SendingMailService {
-    private Url = "http://localhost:57206";
+    private Url = "https://dev-kirrk-webapp.azurewebsites.net";
   
 
     constructor(private httpClient: HttpClient) {

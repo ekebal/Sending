@@ -4,6 +4,20 @@
           <div class="col-md-6 offset-md-3">
               <h2> Reminder Create Account   </h2>
               <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                            <label>Start Date </label>           
+                            <angular2-date-picker formControlName="startdate" class="form-control" [(ngModel)]="dateStart" [settings]="settingsstart"></angular2-date-picker>
+                            <div *ngIf="submitted && f.startdate.errors" class="invalid-feedback">
+                              <div *ngIf="f.startdate.errors.required">Start Date is required</div>      
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Return Date </label>           
+                          <angular2-date-picker  formControlName="returndate" class="form-control"[(ngModel)]="datereturn" [settings]="settingsreturn"></angular2-date-picker>
+                          <div *ngIf="submitted && f.returndate.errors" class="invalid-feedback">
+                            <div *ngIf="f.returndate.errors.required">Return Date is required</div>      
+                          </div>
+                      </div>
                   <div class="form-group">
                       <label>First Name</label>
                       <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -50,26 +64,16 @@
                    
                 </div>
             </div>
-            <div class="form-group">
-              <label>Start Date </label>           
-              <angular2-date-picker formControlName="startdate" class="form-control" [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
-              <div *ngIf="submitted && f.returndate.errors" class="invalid-feedback">
-                <div *ngIf="f.startdate.errors.required">Start Date is required</div>      
-              </div>
-          </div>
-          <div class="form-group">
-            <label>Return Date </label>           
-            <angular2-date-picker formControlName="returndate" class="form-control"[(ngModel)]="date" [settings]="settings"></angular2-date-picker>
-            <div *ngIf="submitted && f.returndate.errors" class="invalid-feedback">
-              <div *ngIf="f.returndate.errors.required">Return Date is required</div>      
-            </div>
-        </div>
+  
         <div class="form-group">
                 <label>Bcc</label>
-                <input type="text" formControlName="Bcc" class="form-control" />
-            </div> 
+                <input type="text" formControlName="Bcc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Bcc.errors }" />
+                <div *ngIf="submitted && f.Bcc.errors" class="invalid-feedback">
+                    <div *ngIf="f.Bcc.errors.email">Blind carbon copy must be a valid email address</div>
+                </div>
+        </div>
                   <div class="form-group">
-                      <button [disabled]="loading" class="btn btn-primary">Send</button>
+                      <button  *ngIf="sendActivate" [disabled]="loading" class="btn btn-primary">Send</button>
                   </div>
               </form>
           </div>

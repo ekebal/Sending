@@ -41,7 +41,7 @@ export class ValidationManuelComponent implements OnInit {
       imgfront: ['', [Validators.required]],     
       imgback: ['', [Validators.required]],     
       imgselfie: ['', [Validators.required]], 
-      Bcc: ['', Validators.required],
+      Bcc: ['',Validators.email],
 
 
 
@@ -56,6 +56,11 @@ export class ValidationManuelComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
     var datePipe = new DatePipe('en-US');
       this.submitted = true;
@@ -83,6 +88,7 @@ export class ValidationManuelComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
+    }
     
   }
 }

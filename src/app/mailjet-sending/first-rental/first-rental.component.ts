@@ -31,6 +31,7 @@ export class FirstRentalComponent implements OnInit {
    }
 
   ngOnInit() {
+
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       name: ['', [Validators.required]],
@@ -39,7 +40,8 @@ export class FirstRentalComponent implements OnInit {
       rentalcode: ['', [Validators.required]],
       rentalstartdate: ['', [Validators.required]],
       rentalreturndate: ['', [Validators.required]],
-      Bcc: ['', Validators.required],
+      Bcc: ['',Validators.email],
+
 
 
 
@@ -55,6 +57,11 @@ console.log(this.registerForm);
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
     var datePipe = new DatePipe('en-US');
       this.submitted = true;
@@ -79,6 +86,5 @@ console.log(this.registerForm);
       if (this.registerForm.invalid) {
           return;
       }
-    
-  }
+    }}
 }

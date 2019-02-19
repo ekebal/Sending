@@ -29,7 +29,7 @@ export class ValidationCompteComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      Bcc: ['', Validators.required],
+      Bcc: ['',Validators.email],
 
   });
 //this.validationCompt.firstName = this.registerForm.value;
@@ -42,6 +42,11 @@ console.log(this.registerForm);
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
       this.submitted = true;
       this.validationCompt.UserFirstName = this.registerForm.value.firstName;
@@ -59,5 +64,6 @@ console.log(this.registerForm);
       if (this.registerForm.invalid) {
           return;
       }
+    }
   }
 }

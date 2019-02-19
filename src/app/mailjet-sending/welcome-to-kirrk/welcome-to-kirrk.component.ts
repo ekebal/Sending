@@ -35,7 +35,7 @@ export class WelcomeToKirrkComponent implements OnInit {
       firstName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       name: ['', [Validators.required]],
-      Bcc: ['', Validators.required],
+      Bcc: ['',Validators.email],
 
   
 
@@ -50,6 +50,11 @@ export class WelcomeToKirrkComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
     var datePipe = new DatePipe('en-US');
       this.submitted = true;
@@ -70,6 +75,6 @@ export class WelcomeToKirrkComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
-    
+    }
   }
 }

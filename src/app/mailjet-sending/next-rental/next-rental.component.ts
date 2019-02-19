@@ -38,7 +38,7 @@ export class NextRentalComponent implements OnInit {
       name: ['', [Validators.required]],
       rentalstartagency: ['', [Validators.required]],
       rentalstartdate: ['', [Validators.required]],
-      Bcc: ['', Validators.required],
+      Bcc: ['',Validators.email],
 
   });
 //this.validationCompt.firstName = this.registerForm.value;
@@ -51,6 +51,11 @@ console.log(this.registerForm);
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+  }
+  else{
     console.log(this.registerForm);
     var datePipe = new DatePipe('en-US');
       this.submitted = true;
@@ -75,4 +80,5 @@ console.log(this.registerForm);
       }
     
   }
+}
 }
