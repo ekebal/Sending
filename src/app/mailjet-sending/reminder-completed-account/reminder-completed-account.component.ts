@@ -17,36 +17,39 @@ export class ReminderCompletedAccountComponent implements OnInit {
   reminderCompletedAccount : ReminderCompletedAccount;
   validationService :any;
   dateStart: Date = new Date();
-    settingsstart = {
+    /*settingsstart = {
         bigBanner: true,
         timePicker: true,
         format: 'dd/MM/yyyy h:mm',
         defaultOpen: false
-    };
+    };*/
     datereturn: Date ;
-    settingsreturn = {
+    /*settingsreturn = {
         bigBanner: true,
         timePicker: true,
         format: 'dd/MM/yyyy h:mm',
         defaultOpen: false
         
-    };
+    };*/
     sendActivate : boolean;
+    autocloce : boolean;
   constructor(private formBuilder: FormBuilder,private sendingMailService : SendingMailService
 ) {
     this.reminderCompletedAccount =new  ReminderCompletedAccount();
     this.service = sendingMailService;
     this.sendActivate = false;
+    this.autocloce = true;
    }
 
   ngOnInit() {
+        console.log(this.dateStart);
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       startagencyname: ['', [Validators.required]],
       returnagencyname: ['', [Validators.required]],
       startdate: ['', [Validators.required]],
-      returndate: ['', [Validators.required]],
+    returndate: ['', [Validators.required]],
       Bcc: ['',Validators.email],
       email: ['', [Validators.required, Validators.email]],
   });
@@ -54,6 +57,7 @@ export class ReminderCompletedAccountComponent implements OnInit {
   };
 
   onChanges(): void {
+    console.log(this.dateStart);
     this.registerForm.valueChanges.subscribe(val => {
       if(this.registerForm.valid)
       {
@@ -65,6 +69,7 @@ export class ReminderCompletedAccountComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    console.log(this.dateStart);
     this.submitted = true;
     if (this.registerForm.invalid) {
       console.log("invalid form")

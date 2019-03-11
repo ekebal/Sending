@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h2>Welcome to Kirrk   </h2>
-                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" (keydown.enter)="$event.preventDefault()">
                     <div class="form-group">
                         <label>First Name</label>
                         <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />

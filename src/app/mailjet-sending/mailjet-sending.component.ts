@@ -20,6 +20,8 @@ export class MailjetSendingComponent implements OnInit {
  TripsIsDoneIsOn = false;
   SendSMSIsOn = false ;
   IDNotAccepted = false;
+  FirstRental = false;
+
 
 
   constructor(private formBuilder: FormBuilder) { }

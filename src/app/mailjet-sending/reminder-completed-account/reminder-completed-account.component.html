@@ -3,22 +3,23 @@
       <div class="row">
           <div class="col-md-6 offset-md-3">
               <h2> Reminder Completed Account   </h2>
-              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                  <div class="form-group">
-                        <div class="form-group">
-                                <label>Start Date </label>           
-                                <angular2-date-picker formControlName="startdate" class="form-control" [(ngModel)]="dateStart" [settings]="settingsstart"></angular2-date-picker>
-                                <div *ngIf="submitted && f.returndate.errors" class="invalid-feedback">
-                                  <div *ngIf="f.startdate.errors.required">Start Date is required</div>      
-                                </div>
-                            </div>
-                            <div class="form-group">
-                              <label>Return Date </label>           
-                              <angular2-date-picker formControlName="returndate" class="form-control"[(ngModel)]="datereturn" [settings]="settingsreturn"></angular2-date-picker>
-                              <div *ngIf="submitted && f.returndate.errors" class="invalid-feedback">
-                                <div *ngIf="f.returndate.errors.required">Return Date is required</div>      
-                              </div>
-                          </div>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" (keydown.enter)="$event.preventDefault()">
+                    <div class="form-group">
+                       <label>Start Date : </label>
+                       <input type="datetime-local" class="form-control" formControlName="startdate" [(ngModel)]="dateStart"/>
+                       <div *ngIf="submitted && f.startdate.errors" class="invalid-feedback">
+                            <div *ngIf="f.startdate.errors.required">Start Date is required</div>      
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label>Return Date : </label>           
+                        <input type="datetime-local" class="form-control" formControlName="returndate" [(ngModel)]="datereturn"/>
+                        <div *ngIf="submitted && f.returndate.errors" class="invalid-feedback">
+                            <div *ngIf="f.returndate.errors.required">Return Date is required</div>      
+                        </div>
+                    </div>
+                    
+                     <div class="form-group">
                       <label>First Name</label>
                       <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                       <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">

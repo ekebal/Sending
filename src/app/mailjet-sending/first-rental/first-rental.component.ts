@@ -16,7 +16,9 @@ export class FirstRentalComponent implements OnInit {
   service : SendingMailService;
   firstRental : FirstRental;
   validationService :any;
-  date: Date = new Date();
+  dateStart: Date = new Date();
+  datereturn: Date = new Date();
+
     settings = {
         bigBanner: true,
         timePicker: true,
@@ -38,8 +40,8 @@ export class FirstRentalComponent implements OnInit {
       rentalreference: ['', [Validators.required]],
       rentalagencyname: ['', [Validators.required]],
       rentalcode: ['', [Validators.required]],
-      rentalstartdate: ['', [Validators.required]],
-      rentalreturndate: ['', [Validators.required]],
+      startdate: ['', [Validators.required]],
+      returndate: ['', [Validators.required]],
       Bcc: ['',Validators.email],
 
 
@@ -72,8 +74,8 @@ console.log(this.registerForm);
       this.firstRental.Bcc = this.registerForm.value.Bcc;
 
       this.firstRental.RentalAgencyName = this.registerForm.value.rentalagencyname;
-      this.firstRental.RentalStartDate = datePipe.transform(this.registerForm.value.rentalstartdate,'dd/MM/yyyy à HH:mm');
-      this.firstRental.RentalEndDate = datePipe.transform(this.registerForm.value.rentalreturndate,'dd/MM/yyyy à HH:mm');
+      this.firstRental.RentalStartDate = datePipe.transform(this.registerForm.value.startdate,'dd/MM/yyyy à HH:mm');
+      this.firstRental.RentalEndDate = datePipe.transform(this.registerForm.value.returndate,'dd/MM/yyyy à HH:mm');
       this.firstRental.RentalCode = this.registerForm.value.rentalcode;
       console.log(this.firstRental);
       // stop here if form is invalid

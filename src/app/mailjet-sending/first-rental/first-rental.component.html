@@ -3,7 +3,7 @@
       <div class="row">
           <div class="col-md-6 offset-md-3">
               <h2>First Rental  </h2>
-              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" (keydown.enter)="$event.preventDefault()">
         
                   <div class="form-group">
                       <label>Email</label>
@@ -45,25 +45,25 @@
                    
                 </div>
             </div>
-            <div class="form-group">
-              <label>Rental start Date </label>           
-              <angular2-date-picker formControlName="rentalstartdate" class="form-control" [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
-              <div *ngIf="submitted && f.rentalstartdate.errors" class="invalid-feedback">
-                <div *ngIf="f.rentalstartdate.errors.required">Start Date is required</div>      
-              </div>
-          </div>
-          <div class="form-group">
-            <label>Rental Return Date </label>           
-            <angular2-date-picker formControlName="rentalreturndate" class="form-control"[(ngModel)]="date" [settings]="settings"></angular2-date-picker>
-            <div *ngIf="submitted && f.rentalreturndate.errors" class="invalid-feedback">
-              <div *ngIf="f.rentalreturndate.errors.required">Return Date is required</div>      
-            </div>
-        </div>
+        <div class="form-group">
+         <label>Start Date </label>
+             <input type="datetime-local" class="form-control" formControlName="startdate" [(ngModel)]="dateStart"/>
+                   <div *ngIf="submitted && f.startdate.errors" class="invalid-feedback">
+                      <div *ngIf="f.startdate.errors.required">Start Date is required</div>      
+                     </div>
+                </div>
+                <div class="form-group">
+                             <label>Return Date </label>           
+                             <input type="datetime-local" class="form-control" formControlName="returndate" [(ngModel)]="datereturn"/>
+                             <div *ngIf="submitted && f.returndate.errors" class="invalid-feedback">
+                                 <div *ngIf="f.returndate.errors.required">Return Date is required</div>      
+                             </div>
+                         </div>
+       
         <div class="form-group">
                 <label>Bcc</label>
                 <input type="text" formControlName="Bcc" class="form-control"[ngClass]="{ 'is-invalid': submitted && f.Bcc.errors }" />
-                <div *ngIf="submitted && f.Bcc.errors" class="invalid-feedback">
-                    
+                <div *ngIf="submitted && f.Bcc.errors" class="invalid-feedback">                   
                     <div *ngIf="f.Bcc.errors.email">Blind carbon copy must be a valid email address</div>
                 </div>
         </div>

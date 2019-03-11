@@ -50,7 +50,10 @@
    <app-trips-is-done *ngIf="TripsIsDoneIsOn"></app-trips-is-done>
   </li>
   <li>
-   
+      <h2><button type="button" class="btn btn-pink"(click)="FirstRental=!FirstRental"  >First Rental  </button></h2>  
+      <app-first-rental *ngIf="FirstRental"></app-first-rental>
+    </li>
+  <li> 
     <h2><button type="button" class="btn btn-pink"(click)="SendSMSIsOn=!SendSMSIsOn"  >Send SMS   </button></h2>  
     <app-send-sms *ngIf="SendSMSIsOn"></app-send-sms>
   </li>
